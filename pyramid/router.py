@@ -169,14 +169,6 @@ class Router(object):
                     if view_callable is None:
                         raise
 
-                    try: 
-                        msg = why[0]
-                    except:
-                        msg = ''
-
-                    # repoze.bfg.message docs-deprecated in Pyramid 1.0
-                    environ['repoze.bfg.message'] = msg
-
                     response = view_callable(why, request)
 
                 # process the response
